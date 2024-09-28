@@ -1,0 +1,17 @@
+{
+  "name": "jeff-portfolio",
+  "version": "1.0.0",
+  "description": "Run frontend and backend concurrently",
+  "scripts": {
+    "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\"",
+    "start-backend": "cd jeff-portfolio-backend && npm start",
+    "start-frontend": "cd jeff-portfolio-frontend && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "mysql2": "^3.11.3"
+  }
+}

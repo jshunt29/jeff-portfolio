@@ -1,0 +1,61 @@
+header {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  text-align: center;
+}
+
+.header-content {
+  margin-bottom: 20px;
+}
+
+.header-title {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.linkedin-button {
+  margin-bottom: 20px;
+  background-color: #0077b5;
+  color: white;
+}
+
+.linkedin-button:hover {
+  background-color: #005682;
+}
+
+/* Styling the navigation links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  display: inline-block;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  color: #ccc; /* Light gray hover effect */
+}
+
+.nav-links .active a {
+  color: #f39c12; /* Active link color */
+}
+
+/* Separator style */
+.separator {
+  color: white;
+  font-size: 20px;
+  padding: 0 10px;
+}
