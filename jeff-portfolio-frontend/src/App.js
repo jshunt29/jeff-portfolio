@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
+import Footer from './components/Footer'; 
 import LandingPage from './components/LandingPage';
 import About from './components/About';
 import BioPage from './components/BioPage';
@@ -33,6 +34,7 @@ function App() {
             <Route path="/blog" component={Blog} />
           </Switch>
         </div>
+        <Footer /> {/* Footer should be visible here */}
       </div>
     </Router>
   );

@@ -42,6 +42,14 @@ function AboutSection() {
           <Typography variant="body2" paragraph style={{ fontStyle: 'italic' }}>
             "The only easy day was yesterday." – Michael Phelps
           </Typography>
+          
+          {/* Mission Statement */}
+          <Typography variant="h5" gutterBottom>
+            Mission Statement
+          </Typography>
+          <Typography variant="body1" paragraph>
+            I am dedicated to leveraging my financial expertise, creative problem-solving, and leadership to deliver value both independently and within teams. I bring a positive influence through strong communication and collaboration, always striving to adapt to dynamic challenges. With experience working on nationwide and international projects, whether remote or in-office, I am sensitive to diverse cultures and customs, ensuring that I work effectively and respectfully across various environments. My goal is to continuously learn, share my knowledge, and contribute innovative solutions that make a lasting impact.
+          </Typography>
         </Grid>
       </Grid>
     </AboutContainer>
@@ -49,3 +57,4 @@ function AboutSection() {
 }
 
 export default AboutSection;
+
