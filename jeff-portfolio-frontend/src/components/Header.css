@@ -1,61 +1,62 @@
-header {
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 20px;
+/* Styling for the Header */
+.header {
   text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 51, 102, 0.85); /* Semi-translucent background */
+  color: white;
+  position: relative;
 }
 
-.header-content {
-  margin-bottom: 20px;
-}
-
+/* Title Styling */
 .header-title {
-  font-size: 24px;
-  color: white;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  margin: 10px 0;
 }
 
+/* LinkedIn Button Styling */
 .linkedin-button {
-  margin-bottom: 20px;
-  background-color: #0077b5;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #0077b5; /* LinkedIn blue */
   color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 .linkedin-button:hover {
-  background-color: #005682;
+  background-color: #005582;
 }
 
-/* Styling the navigation links */
-.nav-links {
+/* Navigation List */
+.nav {
+  margin-top: 20px;
+}
+
+.nav-list {
   list-style: none;
+  padding: 0;
   display: flex;
   justify-content: center;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
+  gap: 5px; /* Small gap between links */
 }
 
-.nav-links li {
-  display: inline-block;
-}
-
-.nav-links a {
+.nav-item a {
   text-decoration: none;
   color: white;
-  font-weight: bold;
-  font-size: 16px;
+  font-size: 1.2rem;
 }
 
-.nav-links a:hover {
-  color: #ccc; /* Light gray hover effect */
+.nav-item a:hover {
+  text-decoration: underline;
+  color:goldenrod;
 }
 
-.nav-links .active a {
-  color: #f39c12; /* Active link color */
-}
-
-/* Separator style */
+/* Separator Styling */
 .separator {
   color: white;
-  font-size: 20px;
   padding: 0 10px;
+  font-size: 1.2rem;
 }

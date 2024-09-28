@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer'; 
+import Header from './components/Header'; // Updated Header component
+import Footer from './components/Footer';
 import LandingPage from './components/LandingPage';
 import About from './components/About';
 import BioPage from './components/BioPage';
@@ -12,7 +12,7 @@ import './App.css';
 
 function App() {
   const backgroundStyle = {
-    backgroundImage: `url('/images/background.jpeg')`,  // This assumes the image is in public/images
+    backgroundImage: `url('/images/background.jpeg')`, // Assuming the image is in public/images
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundAttachment: 'fixed',
@@ -23,7 +23,7 @@ function App() {
   return (
     <Router>
       <div style={backgroundStyle} className="app-layout">
-        <Header />
+        <Header /> {/* Integrated Header component */}
         <div className="content">
           <Switch>
             <Route path="/" exact component={LandingPage} />
@@ -34,7 +34,7 @@ function App() {
             <Route path="/blog" component={Blog} />
           </Switch>
         </div>
-        <Footer /> {/* Footer should be visible here */}
+        <Footer /> {/* Footer component */}
       </div>
     </Router>
   );
