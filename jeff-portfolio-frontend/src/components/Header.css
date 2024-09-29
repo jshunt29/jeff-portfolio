@@ -51,7 +51,6 @@
 
 .nav-item a:hover {
   text-decoration: underline;
-  color:goldenrod;
 }
 
 /* Separator Styling */
@@ -60,3 +59,13 @@
   padding: 0 10px;
   font-size: 1.2rem;
 }
+
+/* Quote Styling */
+.quote {
+  margin-top: 20px;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #f0f0f0; /* Light color for quote */
+  padding: 10px;
+}
+
