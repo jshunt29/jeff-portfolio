@@ -8,6 +8,7 @@ import BioPage from './components/BioPage';
 import Resume from './components/Resume';
 import Portfolio from './components/Portfolio';
 import Blog from './components/Blog';
+import Admin from './components/Admin';  // Import the Admin component here
 import './App.css';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
             <Route path="/resume" component={Resume} />
             <Route path="/portfolio" component={Portfolio} />
             <Route path="/blog" component={Blog} />
+            <Route path="/admin" component={Admin} />
           </Switch>
         </div>
         <Footer /> {/* Footer component */}
