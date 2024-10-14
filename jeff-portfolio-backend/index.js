@@ -1,13 +1,14 @@
 const express = require('express');
-const mysql = require('mysql');
-const bodyParser = require('body-parser');
 const cors = require('cors');
+const mysql = require('mysql');  // For MySQL queries
 
 const app = express();
-app.use(cors());
-app.use(bodyParser.json());
 
-// MySQL connection
+// Middleware
+app.use(cors());
+app.use(express.json());  // Use built-in express.json()
+
+// MySQL Connection
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'jhunt',
@@ -34,6 +35,45 @@ app.get('/resume', (req, res) => {
     res.send(resume);
 });
 
+// Blog Routes using raw MySQL
+app.get('/blogs', (req, res) => {
+    db.query("SELECT * FROM Blogs", (err, results) => {
+        if (err) throw err;
+        res.json(results);
+    });
+});
+
+app.post('/blogs', (req, res) => {
+    const { author, tag_line, content } = req.body;
+
+    // Validate required fields
+    if (!author || !tag_line || !content) {
+        return res.status(400).json({ error: "All fields (author, tag_line, content) are required" });
+    }
+
+    try {
+        // Simple slugify logic
+        const slug = tag_line.toLowerCase().replace(/ /g, '-');
+
+        // Updated SQL query with tag_line column
+        const sql = 'INSERT INTO Blogs (slug, author, tag_line, content) VALUES (?, ?, ?, ?)';
+
+        db.query(sql, [slug, author, tag_line, content], (err, result) => {
+            if (err) {
+                console.error('Error inserting blog post:', err);
+                return res.status(500).json({ error: 'Database error', details: err });
+            }
+
+            res.status(201).json({ message: 'Blog created', id: result.insertId });
+        });
+    } catch (error) {
+        console.error('Unexpected error:', error);  // Catch and log unexpected errors
+        res.status(500).json({ error: 'Unexpected server error' });
+    }
+});
+
+
+// Portfolio Route using raw MySQL
 app.get('/portfolio', (req, res) => {
     db.query("SELECT * FROM portfolio", (err, results) => {
         if (err) throw err;
@@ -41,14 +81,8 @@ app.get('/portfolio', (req, res) => {
     });
 });
 
-app.get('/blog', (req, res) => {
-    db.query("SELECT * FROM blog_posts", (err, results) => {
-        if (err) throw err;
-        res.json(results);
-    });
-});
-
-const port = 5000;
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+// Listen on Port 5000
+const PORT = 5000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
